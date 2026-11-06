@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preparo de aula</title>
+<style>
+:root{--fundo:#f7f8fb;--papel:#fff;--tinta:#3a3b4d;--suave:#6b6d80;--linha:#dfe2ea;--acento:#e8173f;--acento-escuro:#c40f33;--marinho:#2b2a74;--marinho-fundo:#2d2c70;--leve:#1d7a45;--leve-bg:#d8f6dd;--media:#8a5a00;--media-bg:#fef1c4;--erro:#d3122f;--sombra:0 6px 24px rgba(43,42,116,.08);
+--ok:var(--leve);--wr:var(--media);--er:var(--erro);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:400 15px/1.5 'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif}
+.topo{background:#fff;box-shadow:0 2px 14px rgba(43,42,116,.08);border-top:4px solid var(--acento)}
+.topo-in{max-width:1000px;margin:0 auto;padding:14px 16px;font-weight:600;color:var(--marinho);display:flex;align-items:center;justify-content:space-between;gap:12px}
+main{max-width:1000px;margin:0 auto;padding:32px 16px 72px}
+.topo img{display:block;height:32px;width:auto}
+.tip{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--marinho);color:#fff;font-size:11px;font-weight:700;font-style:normal;line-height:1;margin-left:6px;position:relative;cursor:help;vertical-align:middle}
+.tip .tt{display:none;position:absolute;left:-8px;bottom:calc(100% + 8px);width:270px;max-width:72vw;background:var(--marinho-fundo);color:#fff;font-size:.8125rem;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:8px;z-index:10;box-shadow:var(--sombra);text-align:left;white-space:normal}
+.tip:hover .tt,.tip:focus .tt{display:block}
+.hero{background:var(--marinho-fundo);color:#fff;border-radius:16px;padding:28px 32px;margin:0 0 24px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-40px;top:-60px;width:260px;height:260px;border-radius:50%;border:36px solid rgba(255,255,255,.05);pointer-events:none}
+h1{font-size:1.75rem;font-weight:700;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
+.sub{margin:0;color:rgba(255,255,255,.85);font-size:1rem}
+h2{font-size:1.125rem;font-weight:600;color:var(--marinho);margin:0 0 14px}
+section{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:var(--sombra)}
+label{display:block;font-size:.8125rem;font-weight:500;color:var(--marinho);margin-bottom:6px}
+input,textarea{width:100%;font:inherit;color:var(--tinta);background:#fff;border:1px solid var(--linha);border-radius:8px;padding:11px 14px;transition:border-color .15s,box-shadow .15s}
+input::placeholder,textarea::placeholder{color:#9a9cad}
+textarea{min-height:72px;resize:vertical}
+input:hover,textarea:hover{border-color:#c4c8d6}
+input:focus-visible,textarea:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid rgba(232,23,63,.25);outline-offset:1px;border-color:var(--acento)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px 14px}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:600px){.g3{grid-template-columns:repeat(2,1fr)}}
+dialog{border:0;border-radius:16px;padding:0;width:min(760px,calc(100vw - 24px));height:min(calc(100vh - 32px),860px);overflow:hidden;color:var(--tinta);background:#fff;box-shadow:0 20px 60px rgba(20,20,60,.35)}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(30,30,70,.55)}
+.gh{flex:none;position:relative;z-index:2;background:var(--marinho-fundo);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.gh h2{color:#fff;margin:0}
+.gh button{background:transparent;border-color:rgba(255,255,255,.55);color:#fff;padding:7px 16px}
+.gh button:hover{background:rgba(255,255,255,.12)}
+.gb{flex:1;min-height:0;overflow:auto;padding:18px 24px 28px;overflow-wrap:anywhere}
+.gb h3{color:var(--marinho);font-size:1.0625rem;margin:28px 0 8px;scroll-margin-top:72px}
+.gb p,.gb li{margin:6px 0}.gb ul,.gb ol{padding-left:22px;margin:6px 0}
+.gnav{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.gnav button{padding:5px 14px;font-size:.8125rem;border-radius:999px}
+.why{background:#eeeefa;border-radius:12px;padding:10px 14px;margin:12px 0}
+.why b{color:var(--marinho)}
+.warn{background:var(--media-bg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.fig{border:1px dashed #b9bedb;border-radius:12px;background:var(--fundo);padding:14px;margin:12px 0 4px;pointer-events:none;user-select:none}
+.fig .fv{border:1px solid var(--linha);background:#fff;border-radius:8px;padding:8px 12px;font-size:.875rem}
+.fig label{margin-bottom:4px}
+.cap{font-size:.8125rem;color:var(--suave);margin:4px 0 14px!important;text-align:center}
+.exbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 24px;border-bottom:1px solid var(--linha)}
+.exbar span{display:flex;gap:18px}
+button.lnk{background:none;border:0;padding:0;color:var(--marinho);text-decoration:underline;font-weight:600}
+button.lnk:hover{background:none;color:var(--acento)}
+.exnote{margin:0;padding:10px 24px;color:var(--suave);font-size:.875rem;border-bottom:1px solid var(--linha)}
+#xview{display:flex;flex-direction:column;flex:1;min-height:0}
+.exbar,.exnote{flex:none}
+.xscroll{flex:1;min-height:0;overflow:auto;background:#eceef5;padding:16px}
+.pp{max-width:720px;margin:0 auto;background:#fff;box-shadow:0 2px 14px rgba(20,20,60,.18);font-family:Arial,Helvetica,sans-serif;color:#3a3b4d;font-size:13px;line-height:1.45;overflow:hidden}
+.pp-top{height:6px;background:#e8173f}
+.pp-hero{background:#2d2c70;color:#fff;padding:30px 40px 26px;position:relative;overflow:hidden}
+.pp-hero::after{content:'';position:absolute;right:-30px;top:-50px;width:150px;height:150px;border-radius:50%;border:26px solid rgba(255,255,255,.08)}
+.pp-hero h4{margin:0 0 6px;font-size:24px}.pp-hero p{margin:0;color:#dedef0;font-size:13px}
+.pp-body{padding:28px 40px 34px}
+.pp-info{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:#f7f8fb;border:1px solid #dfe2ea;border-radius:10px;padding:16px 18px;margin-bottom:22px}
+.pp-info small{display:block;color:#6b6d80;font-size:10.5px}.pp-info b{color:#2d2c70;font-size:13.5px}
+.pp-h{display:flex;align-items:center;gap:8px;color:#2d2c70;font-size:16px;margin:22px 0 10px}
+.pp-h::before{content:'';width:5px;height:22px;border-radius:3px;background:#e8173f}
+.pp-chk{display:flex;gap:10px;margin:8px 0}
+.pp-chk i{flex:none;width:17px;height:17px;border-radius:4px;background:#e8173f;color:#fff;font-style:normal;font-size:12px;text-align:center;line-height:17px;margin-top:1px}
+.pp-chk.g i{background:#1d7a45;border-radius:50%}
+.pp-blk{border:1px solid #dfe2ea;border-left:4px solid #e8173f;border-radius:8px;padding:12px 16px;margin:10px 0}
+.pp-bh{display:flex;align-items:center;gap:10px;margin-bottom:4px}.pp-bh b{color:#2d2c70;font-size:14px}
+.pp-pill{background:#eeeefa;color:#2d2c70;border-radius:999px;padding:3px 11px;font-size:11px;font-weight:700;white-space:nowrap}
+.pp-blk p{margin:4px 0}.pp-lk{color:#e8173f;word-break:break-all;font-size:12px}
+.pp-rk{background:#fef1c4;border-radius:6px;padding:8px 12px;margin-top:8px}.pp-rk>b{color:#8a5a00;font-size:12px}.pp-rk p{font-size:12px}
+@media (max-width:600px){.pp-body,.pp-hero{padding-left:20px;padding-right:20px}.pp-info{grid-template-columns:repeat(2,1fr)}}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}.row>*{flex:1 1 140px}
+button{font:inherit;font-weight:600;cursor:pointer;border-radius:8px;border:1px solid var(--marinho);background:#fff;color:var(--marinho);padding:9px 20px;transition:background .15s,border-color .15s}
+button:hover{background:#eeeefa}
+button.p{background:var(--acento);border-color:var(--acento);color:#fff;padding:12px 28px}
+button.p:hover{background:var(--acento-escuro);border-color:var(--acento-escuro)}
+button.on{background:var(--marinho);border-color:var(--marinho);color:#fff}
+button:disabled{opacity:.5;cursor:not-allowed}
+.q{border-top:1px solid var(--linha);padding:14px 0}.q:first-of-type{border-top:0;padding-top:0}
+.q .top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.q .top strong{font-weight:600;color:var(--marinho)}
+.act{background:#eeeefa;border-radius:12px;padding:12px 14px;margin-top:10px}
+.act label.ck{display:flex;gap:10px;color:var(--tinta);font-size:.9375rem;font-weight:400;align-items:flex-start;cursor:pointer;margin:0}
+.act input[type=checkbox]{width:18px;height:18px;margin-top:4px;flex:none;accent-color:var(--acento)}
+.blk{border:1px solid var(--linha);border-radius:12px;padding:16px;margin-bottom:14px}
+.bh{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px}
+.bh .t{flex:1 1 200px}.bh .m{width:96px}
+.st{background:#eeeefa;color:var(--marinho);font-weight:600;font-size:.8125rem;border-radius:999px;padding:6px 14px;margin-bottom:6px;white-space:nowrap}
+.rk{margin-top:14px;padding-left:12px;border-left:3px solid #f2c94c}
+.rk summary{cursor:pointer;color:var(--marinho)}
+.add{margin-top:14px}
+.lk{margin-bottom:8px;align-items:center}
+.rk .r{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;margin-top:10px}
+@media (max-width:600px){.rk .r{grid-template-columns:1fr}.hero{padding:22px 20px}h1{font-size:1.4rem}section{padding:18px}}
+.bar{height:10px;background:var(--linha);border-radius:5px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .2s}
+.ok{color:var(--leve)}.wr{color:var(--media)}.er{color:var(--erro)}
+.hint{color:var(--suave);font-size:.8125rem;margin:0 0 10px}
+#status li{margin:3px 0}
+#pst strong{display:inline-block;border-radius:999px;padding:6px 16px;font-size:.8125rem;background:var(--media-bg)}
+#pst strong.ok{background:var(--leve-bg)}
+.bar-top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:5;background:#fff;border:1px solid var(--linha);border-radius:16px;padding:12px 18px;margin-bottom:20px;box-shadow:var(--sombra)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topo"><div class="topo-in"><img src="https://media.cna.com.br/cna_logo_3ff9a4f2fc.svg" alt="CNA" onerror="this.replaceWith(document.createTextNode('Programação e Robótica'))"><button data-act='guide'>Guia de preparo</button></div></header>
+<main>
+<div class="hero"><h1>Preparo de aula</h1>
+<p class="sub">Programação e Robótica</p></div>
+
+<section class="noprint"><h2>Já tem um plano salvo?</h2><p class="hint">Importe um PDF gerado por esta ferramenta para continuar editando.</p><button data-act="imp">Importar plano (PDF)</button> <span id="imsg" class="hint"></span><input type="file" id="imp" accept=".pdf,application/pdf,.json,application/json" hidden></section>
+<div class="bar-top">
+  <div class="row" style="align-items:center">
+    <div><strong id="tot">0 / 90 min</strong> <span id="tmsg" class="hint"></span><div class="bar"><i id="fill"></i></div></div>
+    <div id="pst" style="flex:0 1 auto"></div>
+  </div>
+</div>
+
+<section>
+  <h2>1. Turma</h2>
+  <label for="turma" data-tip="Cole aqui o nome da turma exatamente como aparece no sistema da escola. Os campos abaixo são preenchidos sozinhos.">Cole o nome completo da turma</label>
+  <input id="turma" data-path="turma" placeholder="#10332 - CYO1 / JUN / QUA / 13:30 / Edney Farias">
+  <p id="tw" class="hint er" hidden>Não consegui separar o nome. Preencha os campos abaixo manualmente.</p>
+  <div class="grid g3" style="margin-top:12px">
+    <div><label data-tip="Número da turma, o que vem depois do # no nome dela.">ID</label><input data-path="f.id"></div>
+    <div><label data-tip="Módulo que a turma está cursando, por exemplo CYO1.">Módulo</label><input data-path="f.mod"></div>
+    <div><label data-tip="Mês em que a turma começou, por exemplo JUN.">Mês de início</label><input data-path="f.mes"></div>
+    <div><label data-tip="Dia da semana em que a turma tem aula, por exemplo QUA.">Dia da aula</label><input data-path="f.dia"></div>
+    <div><label data-tip="Horário em que a aula começa, por exemplo 13:30.">Horário</label><input data-path="f.hora"></div>
+    <div><label data-tip="Nome do professor responsável por esta turma.">Professor</label><input data-path="f.prof"></div>
+  </div>
+  <div class="grid" style="margin-top:10px"><div><label data-tip="Dia em que esta aula vai acontecer. Clique no campo para escolher no calendário. A data também vai no nome do PDF.">Data da aula</label><input type="date" data-path="f.data"></div><div><label data-tip="Duração total da aula, em minutos. O roteiro precisa somar exatamente esse tempo.">Duração (min)</label><input type="number" min="10" value="90" data-path="dur"></div></div>
+</section>
+
+<section>
+  <h2>2. Antes da aula</h2>
+  <p class="hint">Responda e marque cada item depois de prepará-lo. Os itens marcados vão para o PDF.</p>
+  <div id="pre"></div>
+</section>
+
+<section>
+  <h2>3. Roteiro da aula</h2>
+  <p class="hint">Coloque cada link no bloco em que o material será usado.</p>
+  <div id="blocks"></div>
+  <button class="p noprint" data-act="addblk">Adicionar bloco</button>
+</section>
+
+<section>
+  <h2>4. Materiais da aula</h2>
+  <label data-tip="Um link que reúne todos os materiais da aula: slides, imagens e arquivos. Pode ser uma pasta no Drive, uma página ou um repositório no GitHub.">Link com todos os materiais da aula</label>
+  <p class="hint">Pode ser uma pasta no Drive, uma página ou um repositório no GitHub que reúna todos os slides, imagens e arquivos usados na aula.</p>
+  <input data-path="drive" placeholder="Cole o link aqui">
+</section>
+
+<section>
+  <h2>5. Aula de sucesso</h2>
+  <p class="hint" data-tip="Escreva o que o aluno precisa ter feito no fim da aula para ela ser um sucesso. Prefira algo que dê para conferir. Ex.: o aluno instalou o Unity, criou o script de movimento e aprendeu variáveis.">O que o aluno precisa ter feito no fim da aula?</p>
+  <div id="succ"></div>
+  <button class="noprint" data-act="addsucc">Adicionar item</button>
+</section>
+
+<section class="noprint">
+  <h2>Situação do plano</h2>
+  <ul id="status" style="padding-left:18px;margin:0 0 14px"></ul>
+  <button class="p" id="savebtn" data-act="pdf" disabled>Salvar plano em PDF</button> <span id="smsg" class="hint"></span>
+  <p class="hint" style="margin:10px 0 0">O PDF só é liberado quando todos os itens acima estiverem completos e o roteiro fechar a duração da aula.</p>
+</section>
+</main>
+<dialog id='guide' aria-labelledby='gt'><div class='gh'><h2 id='gt'>Guia de preparo de aula</h2><button data-act='gclose'>Fechar</button></div><div class='gb' id='gview'>
+<p>Olá! Este guia foi feito para professores e coordenadores da rede. Em poucos minutos você vai entender o que é preparar uma aula e como esta ferramenta ajuda, passo a passo. Pode ler de uma vez ou voltar só à parte de que precisar.</p>
+<div class='gnav'><button data-act='gto:g0'>O que é preparar</button><button data-act='gto:g1'>1. Turma</button><button data-act='gto:g2'>2. Antes da aula</button><button data-act='gto:g3'>3. Roteiro</button><button data-act='gto:g4'>4. Materiais</button><button data-act='gto:g5'>5. Aula de sucesso</button><button data-act='gto:g6'>Salvar e editar</button><button data-act='gto:g7'>Checklist final</button></div>
+
+<h3 id='g0'>O que é preparar uma aula?</h3>
+<p>Conhecer bem o conteúdo é essencial, mas sozinho não basta. Imagine que alguém peça uma aula, em 30 minutos, sobre uma ferramenta que você domina. Você sabe o assunto, mas está pronto? Quanto tempo cada parte leva? Onde os alunos costumam travar? O que fazer se um deles não conseguir instalar o programa?</p>
+<p>Preparar a aula é responder a essas perguntas <b>antes</b> de entrar na sala. Na prática, é cuidar de quatro coisas:</p>
+<ul><li><b>Tempo:</b> saber o que será feito em cada momento da aula.</li><li><b>Material:</b> deixar códigos, arquivos e projetos prontos para entregar.</li><li><b>Imprevistos:</b> conhecer os problemas mais prováveis e já ter a solução.</li><li><b>Cada aluno:</b> pensar em quem faltou ou ficou para trás.</li></ul>
+<div class='why'><b>O que você ganha:</b> aulas mais tranquilas, alunos melhor atendidos e um jeito de preparar que é parecido em toda a rede. A ferramenta conduz você por perguntas e, no final, gera o seu plano de aula em PDF.</div>
+<p>Uma dica: reserve um horário tranquilo para preparar e, se puder, faça a atividade do começo ao fim uma vez, olhando o relógio. É o que dá segurança nos tempos que você vai anotar.</p>
+
+<h3 id='g1'>1. Turma</h3>
+<p>Aqui você diz de qual turma e de qual dia é este plano.</p>
+<ol><li>Copie o nome da turma como aparece no sistema da escola e cole no primeiro campo.</li><li>Os campos de ID, módulo, mês, dia, horário e professor são preenchidos sozinhos. Dê uma olhada e corrija se algo vier errado.</li><li>Clique no campo <b>Data da aula</b> e escolha o dia no calendário.</li><li>A <b>duração</b> já vem com 90 minutos. Só altere se a sua aula for diferente.</li></ol>
+<div class='fig' aria-hidden='true'><label>Cole o nome completo da turma</label><div class='fv'>#10332 - CYO1 / JUN / QUA / 13:30 / Maria Souza</div><div class='grid g3' style='margin-top:10px'><div><label>ID</label><div class='fv'>10332</div></div><div><label>Módulo</label><div class='fv'>CYO1</div></div><div><label>Mês de início</label><div class='fv'>JUN</div></div><div><label>Dia da aula</label><div class='fv'>QUA</div></div><div><label>Horário</label><div class='fv'>13:30</div></div><div><label>Professor</label><div class='fv'>Maria Souza</div></div></div></div>
+<p class='cap'>Ao colar o nome da turma, os campos de baixo se preenchem sozinhos.</p>
+
+<h3 id='g2'>2. Antes da aula</h3>
+<p>Esta parte lista o que precisa estar pronto <b>antes</b> de os alunos chegarem, para você não perder tempo com isso durante a aula. Responda cada pergunta com <b>Sim</b> ou <b>Não</b>. Se for Sim, aparece uma tarefa de preparo: faça e marque a caixinha. Se for Não, não há nada a fazer ali. As tarefas marcadas vão para o seu PDF.</p>
+<div class='fig' aria-hidden='true'><div class='q' style='padding:0;border:0'><div class='top'><strong>Algum aluno faltou na última aula?</strong><span><button class='on'>Sim</button> <button>Não</button></span></div><div class='act'><label class='ck'><input type='checkbox' checked tabindex='-1'><span>Preparar o projeto base com o ponto de partida da aula anterior, pronto para enviar ao aluno faltante.</span></label></div></div></div>
+<p class='cap'>Respondeu Sim? A tarefa aparece e você marca quando terminar de prepará-la.</p>
+<p>O que cada pergunta quer garantir:</p>
+<ul><li><b>Algum aluno faltou?</b> Quem faltou precisa de um ponto de partida para acompanhar a turma. Deixe o projeto base pronto para enviar a ele.</li><li><b>A turma está no meio de um projeto?</b> Tenha o projeto final pronto. Assim você sabe aonde a turma vai chegar e responde dúvidas com mais segurança.</li><li><b>Os alunos vão copiar códigos?</b> Deixe os códigos organizados em links. Na aula, basta enviar o link, sem copiar e colar na hora.</li><li><b>Haverá instalação de programas?</b> Deixe os links de instalação prontos.</li><li><b>Os alunos vão precisar de arquivos?</b> Imagens e outros arquivos também ficam em links, fáceis de baixar.</li><li><b>A turma está atrasada ou ficou algo pendente?</b> Reorganize o conteúdo para voltar ao cronograma: o que pode ser mais rápido, o que precisa ser recuperado. Depois, reflita isso nos tempos do roteiro.</li></ul>
+<div class='warn'>Os links de códigos, instalação e arquivos não ficam aqui: eles vão no <b>bloco do roteiro</b> em que forem usados (próxima seção).</div>
+
+<h3 id='g3'>3. Roteiro da aula</h3>
+<p>O roteiro é a sua aula dividida em partes, cada uma com um tempo. Por que isso importa? Sem tempo definido, é fácil gastar a aula inteira no primeiro assunto e deixar o final sem espaço. A soma dos blocos precisa dar exatamente a duração da aula, e a barra no topo da página mostra quanto falta.</p>
+<div class='fig' aria-hidden='true'><strong>75 / 90 min</strong> <span class='hint wr'>Faltam 15 min para fechar 90 min.</span><div class='bar'><i style='width:83%;background:#f0b323'></i></div></div>
+<p class='cap'>A barra de tempo acompanha o seu roteiro e avisa quando falta ou passa tempo.</p>
+<p>Para montar, clique em <b>Adicionar bloco</b> para cada parte da aula, na ordem em que ela acontece, e preencha:</p>
+<ul><li><b>Minutos:</b> quanto tempo você vai dedicar àquele tema. Se a parte costuma dar trabalho, como uma instalação, dê mais tempo.</li><li><b>Tema:</b> o assunto daquele momento, por exemplo variáveis ou comandos de repetição.</li><li><b>O que será passado:</b> em poucas palavras, o que você vai fazer: o que explica, quais slides mostra, que exemplo usa.</li><li><b>Links do material:</b> os links usados naquele momento (códigos, arquivos, instaladores). Você pode adicionar quantos precisar.</li></ul>
+<div class='fig' aria-hidden='true'><div class='bh'><span class='st'>0-10 min</span><div class='m'><label>Minutos</label><div class='fv'>10</div></div><div class='t'><label>Tema</label><div class='fv'>Variáveis</div></div></div><label>O que será passado</label><div class='fv'>Explicar o que é uma variável, mostrar os slides 1 e 2 e usar o exemplo da caixa que guarda um valor.</div><label style='margin-top:10px'>Link do material deste momento</label><div class='fv'>https://...</div></div>
+<p class='cap'>Cada bloco é uma parte da aula, com tempo, tema, descrição e links.</p>
+<p>Em cada bloco existe também o espaço <b>O que pode dar errado</b>. Ele é opcional, mas muito útil: é onde você anota um problema provável e a solução. Por exemplo: o Unity não roda no computador do aluno; solução: passar acesso remoto com o AnyDesk. Quem já previu o problema não se atrapalha quando ele aparece. Uma boa fonte de ideias são os tropeços de aulas anteriores. Se naquela parte não há risco, é só deixar em branco.</p>
+<p>Dica: termine o roteiro com um bloco de desafio extra ou revisão. Ele aproveita bem quem acabou mais cedo e pode ser cortado se a aula atrasar.</p>
+
+<h3 id='g4'>4. Materiais da aula</h3>
+<p>Cole um único link que reúna tudo o que será usado: slides, imagens e arquivos. Pode ser uma pasta no Drive, uma página ou um repositório no GitHub. Assim o material fica num só lugar e qualquer professor consegue encontrá-lo, inclusive se precisar substituir você.</p>
+
+<h3 id='g5'>5. Aula de sucesso</h3>
+<p>Aqui você escreve o que o aluno precisa ter feito ao final para dizermos que a aula foi boa. Prefira itens que dá para conferir, como "o aluno instalou o Unity", "criou o script de movimento" ou "aprendeu variáveis". Isso ajuda você a perceber quem ficou para trás e a decidir o que preparar para a próxima aula.</p>
+
+<h3 id='g6'>Salvar o plano e editar depois</h3>
+<p>O botão <b>Salvar plano em PDF</b> libera quando o plano estiver completo. A lista <b>Situação do plano</b> mostra o que ainda falta.</p>
+<div class='fig' aria-hidden='true'><ul style='padding-left:0;margin:0 0 12px;list-style:none'><li class='ok'>✓ Perguntas do pré-aula respondidas</li><li class='ok'>✓ Itens de preparo concluídos</li><li class='wr'>○ O roteiro precisa somar exatamente 90 min (hoje: 75 min)</li></ul><button disabled>Salvar plano em PDF</button></div>
+<p class='cap'>O PDF só é liberado quando não há mais pendências.</p>
+<p>O arquivo é salvo com o nome <b>#ID da turma - Professor - data</b>. Precisou mudar algo depois? Use o botão <b>Importar plano</b> no topo da página, escolha o PDF que você salvou, edite o que quiser e salve de novo.</p>
+
+<div class='why'><b>Quer ver como fica?</b> Veja um plano de aula de exemplo, gerado por esta própria ferramenta, com uma aula fictícia de variáveis e condicionais.<br><button style='margin-top:10px' data-act='exopen2'>Ver exemplo de plano de aula</button></div>
+
+<h3 id='g7'>Minha aula está pronta?</h3>
+<p>Antes de encerrar, faça estas perguntas a si mesmo:</p>
+<ul><li>Fiz a atividade do começo ao fim, olhando o relógio?</li><li>O tempo fecha, com folga nas partes que costumam dar trabalho?</li><li>Abri cada link para conferir se funciona e se os alunos conseguem acessar?</li><li>O projeto final está pronto e funcionando?</li><li>Sei o que fazer com o aluno que faltou ou travou?</li><li>Sei como vou perceber se os alunos aprenderam?</li></ul>
+<p>Se respondeu sim a tudo, você está preparado(a) para uma ótima aula. 🙂</p>
+</div>
+<div id='xview' hidden><div class='exbar'><button data-act='exback'>← Voltar ao guia</button><span><button class='lnk' data-act='exdl'>Baixar PDF</button> <button class='lnk' data-act='exnew'>Abrir em nova aba</button></span></div>
+<p class='exnote'>Aula fictícia, criada só para este exemplo.</p>
+<p id='exmsg' class='hint er' hidden style='padding:8px 24px;margin:0'></p>
+<div id='xscroll' class='xscroll'><div id='xpaper'></div></div></div></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+const Q=[
+{k:'falta',q:'Algum aluno faltou na última aula?',a:'Preparar o projeto base com o ponto de partida da aula anterior, pronto para enviar ao aluno faltante.'},
+{k:'proj',q:'A turma está no meio de um projeto?',a:'Ter o projeto final pronto, com todas as funcionalidades, antes da aula.'},
+{k:'cod',q:'Os alunos vão copiar códigos durante a aula?',a:'Organizar os códigos em links, para tê-los em mãos na hora de enviar aos alunos. Coloque o link no bloco do roteiro em que cada código será passado.'},
+{k:'inst',q:'Haverá instalação de algum programa?',a:'Deixar prontos os links de instalação e tudo que for necessário. Coloque os links no bloco correspondente.'},
+{k:'arq',q:'Os alunos vão precisar de arquivos (imagens, assets)?',a:'Deixar os arquivos organizados para download por link. Coloque o link no bloco em que serão usados.'},
+{k:'atr',q:'Ficou algo pendente ou a turma está atrasada?',a:'Reorganizar os assuntos para voltar ao cronograma e refletir isso na minutagem do roteiro.'}
+];
+const S={turma:'',dur:90,f:{id:'',mod:'',mes:'',dia:'',hora:'',prof:'',data:''},drive:'',q:{},blocks:[],succ:['']};
+Q.forEach(o=>S.q[o.k]={v:null,done:false,x:{}});
+S.blocks.push(nb());
+function nb(){return{min:10,title:'',desc:'',links:[''],risks:[{p:'',s:''}]}}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+function get(p){return p.split('.').reduce((o,k)=>o?.[k],S)}
+function set(p,v){const a=p.split('.'),l=a.pop();a.reduce((o,k)=>o[k],S)[l]=v}
+function tip(t){return `<span class="tip" tabindex="0" role="img" aria-label="${esc(t)}">i<span class="tt" aria-hidden="true">${esc(t)}</span></span>`}
+function inp(path,label,opt={}){const v=esc(get(path));const t=opt.t?`<textarea data-path="${path}" ${opt.ph?`placeholder="${esc(opt.ph)}"`:''}>${v}</textarea>`:`<input data-path="${path}" value="${v}" ${opt.ph?`placeholder="${esc(opt.ph)}"`:''} ${opt.num?'type="number" min="0"':''}>`;return`<div>${label?`<label>${label}</label>`:''}${t}</div>`}
+
+function parseTurma(t){
+  const m=t.trim().match(/^#?\s*(\d+)\s*-\s*(.+?)\s*\/\s*(.+?)\s*\/\s*(.+?)\s*\/\s*(.+?)\s*\/\s*(.+)$/);
+  if(!m)return false;
+  const[,id,mod,mes,dia,hora,prof]=m;Object.assign(S.f,{id,mod,mes,dia,hora,prof});return true;
+}
+function render(){
+  $('#pre').innerHTML=Q.map((o,i)=>{const s=S.q[o.k];
+    let h=`<div class="q"><div class="top"><strong>${o.q}</strong><span class="noprint"><button data-act="ans:${o.k}:1" class="${s.v===true?'on':''}">Sim</button> <button data-act="ans:${o.k}:0" class="${s.v===false?'on':''}">Não</button></span></div>`;
+    if(s.v===false)h+=`<p class="hint" style="margin:6px 0 0">Nada a preparar aqui.</p>`;
+    if(s.v===true){h+=`<div class="act"><label class="ck"><input type="checkbox" data-act="done:${o.k}" ${s.done?'checked':''}><span>${o.a}</span></label>`;
+      (o.x||[]).forEach(([k,l,t])=>{h+=`<div class="x">${inp(`q.${o.k}.x.${k}`,l,{t})}</div>`});h+='</div>'}
+    return h+'</div>'}).join('');
+  $('#blocks').innerHTML=S.blocks.map((b,i)=>`<div class="blk">
+    <div class="bh"><span class="st" data-st="${i}"></span><div class="m"><label>Minutos ${tip('Quantos minutos você vai dedicar a este tema, ou seja, o tempo que vai parar para explicar e praticar com os alunos.')}</label><input type="number" min="1" data-path="blocks.${i}.min" value="${esc(b.min)}"></div>
+    <div class="t"><label>Tema ${tip('O assunto desta parte da aula. Exemplos: variáveis, comandos de repetição, código de movimento do personagem.')}</label><input data-path="blocks.${i}.title" value="${esc(b.title)}" placeholder="Ex.: Variáveis"></div>
+    <button class="noprint" data-act="delblk:${i}" aria-label="Remover bloco">Remover</button></div>
+    ${inp(`blocks.${i}.desc`,'O que será passado '+tip('Descreva, em poucas palavras, o que você vai fazer nesta parte: o que vai explicar, quais slides vai mostrar e que exemplo vai usar.'),{t:1,ph:'Ex.: Explicar o que é uma variável, mostrar os slides 1 e 2 e usar o exemplo da caixa que guarda um valor.'})}
+    <div style="margin-top:12px"><label>Links do material deste momento (código, arquivo, instalador) ${tip('Links dos materiais usados neste momento da aula, como códigos, arquivos e instaladores. Você pode adicionar mais de um.')}</label>${b.links.map((l,j)=>`<div class="row lk"><input data-path="blocks.${i}.links.${j}" value="${esc(l)}" placeholder="Cole o link aqui">${b.links.length>1?`<button class="noprint" style="flex:0 0 auto" data-act="dellink:${i}:${j}" aria-label="Remover link">×</button>`:''}</div>`).join('')}<button class="noprint add" data-act="addlink:${i}">Adicionar link</button></div>
+    <details class="rk" data-blk="${i}" ${b.closed?'':'open'}><summary><strong>O que pode dar errado (opcional)</strong> ${tip('Espaço para registrar problemas que podem acontecer nesta parte da aula e a solução de cada um. Exemplo: o aluno não conseguiu instalar o Unity, ou o Unity não roda no computador dele. Solução: passar o AnyDesk para ele usar o Unity.')}</summary>
+    ${b.risks.map((r,j)=>`<div class="r" style="margin-top:8px">${inp(`blocks.${i}.risks.${j}.p`,'Problema '+tip('Algo que pode dar errado nesta parte da aula. Ex.: o aluno não conseguiu instalar o Unity.'))}${inp(`blocks.${i}.risks.${j}.s`,'Solução (com link, se houver) '+tip('O que você vai fazer se o problema acontecer. Ex.: passar acesso remoto com o AnyDesk para o aluno conseguir usar o Unity.'))}<button class="noprint" style="align-self:end" data-act="delrk:${i}:${j}" aria-label="Remover problema">×</button></div>`).join('')}
+    <button class="noprint add" data-act="addrk:${i}">Adicionar problema</button></details></div>`).join('');
+  $('#succ').innerHTML=S.succ.map((s,i)=>`<div class="row" style="margin-bottom:8px;align-items:center"><input data-path="succ.${i}" value="${esc(s)}" placeholder="Ex.: Instalou o Unity e rodou o projeto"><button class="noprint" style="flex:0 0 auto" data-act="delsucc:${i}" aria-label="Remover item">×</button></div>`).join('');
+  upd();
+}
+function upd(){
+  const dur=+S.dur||90;let t=0;
+  S.blocks.forEach((b,i)=>{const m=+b.min||0;const e=document.querySelector(`[data-st="${i}"]`);if(e)e.textContent=`${t}–${t+m} min`;t+=m});
+  $('#tot').textContent=`${t} / ${dur} min`;
+  const f=$('#fill');f.style.width=Math.min(100,t/dur*100)+'%';f.style.background=t>dur?'var(--er)':t<dur*0.8?'#f0b323':'var(--ok)';
+  const msg=t>dur?`Passou ${t-dur} min. O roteiro precisa fechar em ${dur} min.`:t<dur?`Faltam ${dur-t} min para fechar ${dur} min.`:'Tempo fechado.';
+  $('#tmsg').textContent=msg;$('#tmsg').className='hint '+(t>dur?'er':t<dur?'wr':'ok');
+  const c=[];
+  const pend=Q.filter(o=>S.q[o.k].v===null).length;
+  c.push([!pend,pend?`Responder ${pend} pergunta(s) do pré-aula`:'Perguntas do pré-aula respondidas']);
+  const todo=Q.filter(o=>S.q[o.k].v===true&&!S.q[o.k].done).length;
+  c.push([!todo,todo?`Concluir ${todo} item(ns) de preparo`:'Itens de preparo concluídos']);
+  c.push([S.blocks.length&&S.blocks.every(b=>b.title.trim()&&b.desc.trim()),'Todos os blocos com tema e descrição']);
+  
+  c.push([t===dur,t===dur?`Roteiro fechado em ${dur} min`:`O roteiro precisa somar exatamente ${dur} min (hoje: ${t} min, ${t>dur?'excesso de '+(t-dur):'faltam '+(dur-t)} min)`]);
+  c.push([S.succ.some(s=>s.trim()),'Critério de sucesso definido']);
+  c.push([S.f.id&&S.f.prof,'Turma identificada']);
+  c.push([S.f.data,'Data da aula informada']);
+  $('#status').innerHTML=c.map(([ok,l])=>`<li class="${ok?'ok':'wr'}">${ok?'✓':'○'} ${l}</li>`).join('');
+  const done=c.every(x=>x[0]);$('#savebtn').disabled=!done;$('#pst').innerHTML=`<strong class="${done?'ok':'wr'}">${done?'Plano completo':'Plano incompleto'}</strong>`;
+}
+document.addEventListener('input',e=>{
+  const p=e.target.dataset.path;if(!p)return;
+  let v=e.target.value;set(p,v);
+  if(p==='turma'){const ok=!v.trim()||parseTurma(v);$('#tw').hidden=ok;document.querySelectorAll('[data-path^="f."]').forEach(i=>i.value=get(i.dataset.path)||'')}
+  upd();
+});
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act]');if(!b||b.type==='checkbox')return;
+  const[a,x,y]=b.dataset.act.split(':');
+  if(a==='ans'){S.q[x].v=y==='1';if(y==='0')S.q[x].done=false}
+  else if(a==='addblk')S.blocks.push(nb());
+  else if(a==='delblk')S.blocks.splice(+x,1);
+  else if(a==='addlink')S.blocks[+x].links.push('');
+  else if(a==='dellink')S.blocks[+x].links.splice(+y,1);
+  else if(a==='addrk')S.blocks[+x].risks.push({p:'',s:''});
+  else if(a==='delrk'){S.blocks[+x].risks.splice(+y,1);}
+  else if(a==='addsucc')S.succ.push('');
+  else if(a==='delsucc')S.succ.splice(+x,1);
+  else if(a==='pdf'){savePdf();return}
+  else if(a==='imp'){$('#imp').click();return}
+  else if(a==='guide'){$('#guide').showModal();return}
+  else if(a==='gclose'){$('#guide').close();return}
+  else if(a==='exopen2'){showEx();return}
+  else if(a==='exback'){showGuide();return}
+  else if(a==='exdl'){exDownload();return}
+  else if(a==='exnew'){if(exPdf())window.open(exUrl,'_blank');return}
+  else if(a==='gto'){const el=document.getElementById(x);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});return}
+  else return;
+  render();
+});
+document.addEventListener('click',e=>{const t=e.target;if(t.matches&&t.matches('input[type=date]')){try{t.showPicker()}catch(_){}}});
+document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('summary .tip'))e.preventDefault()});
+function flashI(t,e){const m=$('#imsg');m.textContent=t;m.className='hint '+(e?'er':'ok')}
+function applyPlan(d){
+  const P=d&&d.S;if(!P||typeof P!=='object')throw new Error('formato');
+  S.turma=String(P.turma||'');S.dur=P.dur||90;S.drive=String(P.drive||'');
+  S.f={id:'',mod:'',mes:'',dia:'',hora:'',prof:'',data:''};Object.keys(S.f).forEach(k=>{S.f[k]=String((P.f||{})[k]||'')});
+  Q.forEach(o=>{const q=(P.q||{})[o.k]||{};S.q[o.k]={v:q.v===true?true:q.v===false?false:null,done:!!q.done,x:{}}});
+  S.blocks=(Array.isArray(P.blocks)&&P.blocks.length?P.blocks:[nb()]).map(b=>({min:b.min??10,title:String(b.title||''),desc:String(b.desc||''),links:Array.isArray(b.links)&&b.links.length?b.links.map(String):[String(b.link||'')],closed:!!b.closed,risks:(Array.isArray(b.risks)?b.risks:[]).map(r=>({p:String(r.p||''),s:String(r.s||'')})).filter(r=>r.p.trim()||r.s.trim())}));
+  S.succ=Array.isArray(P.succ)&&P.succ.length?P.succ.map(String):[''];
+  render();
+  document.querySelectorAll('[data-path]').forEach(e=>{const v=get(e.dataset.path);e.value=v==null?'':v});
+  $('#tw').hidden=true;
+}
+$('#imp').addEventListener('change',async e=>{
+  const file=e.target.files[0];e.target.value='';if(!file)return;
+  try{
+    const buf=await file.arrayBuffer();const txt=new TextDecoder('latin1').decode(buf);let d;
+    if(/\.json$/i.test(file.name)||txt.trimStart().startsWith('{'))d=JSON.parse(new TextDecoder('utf-8').decode(buf));
+    else{const m=txt.match(/PREPARO-DE-AULA:v1:([A-Za-z0-9+\/=]+)/);if(!m)throw new Error('sem dados');d=JSON.parse(decodeURIComponent(escape(atob(m[1]))))}
+    applyPlan(d);flashI('Plano importado. Confira os dados e edite o que precisar.');
+  }catch(err){flashI('Não encontrei os dados do plano neste arquivo. A importação só funciona com PDFs gerados por esta ferramenta.',1)}
+});
+document.addEventListener('click',e=>{if(e.target.id==='guide')e.target.close()});
+document.querySelectorAll('[data-tip]').forEach(l=>l.insertAdjacentHTML('beforeend',' '+tip(l.dataset.tip)));
+function fixTip(e){const t=e.target.closest&&e.target.closest('.tip');if(!t)return;const tt=t.querySelector('.tt');tt.style.left='-8px';tt.style.right='auto';const r=tt.getBoundingClientRect();if(r.right>innerWidth-8){tt.style.left='auto';tt.style.right='-8px'}}
+document.addEventListener('mouseover',fixTip);document.addEventListener('focusin',fixTip);
+$('#guide').addEventListener('close',showGuide);
+document.addEventListener('toggle',e=>{const d=e.target;if(d.dataset&&d.dataset.blk!==undefined&&S.blocks[+d.dataset.blk])S.blocks[+d.dataset.blk].closed=!d.open},true);
+function flash(t,e){const m=$('#smsg');m.textContent=t;m.className='hint '+(e?'er':'ok')}
+const EX={turma:'#10000 - CYO2 / JUN / SEG / 08:30 / Maria Souza',dur:90,drive:'https://exemplo.com/materiais-variaveis-condicionais',
+f:{id:'10000',mod:'CYO2',mes:'JUN',dia:'SEG',hora:'08:30',prof:'Maria Souza',data:'2026-11-02'},
+q:{falta:{v:true,done:true,x:{}},proj:{v:true,done:true,x:{}},cod:{v:true,done:true,x:{}},inst:{v:false,done:false,x:{}},arq:{v:true,done:true,x:{}},atr:{v:false,done:false,x:{}}},
+blocks:[
+{min:10,title:'Boas-vindas e revisão',desc:'Receber a turma, retomar o projeto da aula passada e entregar o projeto base ao aluno que faltou.',links:['https://exemplo.com/projeto-base'],risks:[]},
+{min:10,title:'O que é uma variável',desc:'Explicar variável com o exemplo da caixa com etiqueta que guarda um valor, mostrando os slides 1 e 2.',links:['https://exemplo.com/slides-variaveis'],risks:[{p:'Os alunos confundem o nome da variável com o valor guardado.',s:'Voltar ao exemplo da caixa e pedir que digam em voz alta o que está dentro dela.'}]},
+{min:20,title:'Criando variáveis no Unity',desc:'Criar no script do jogo as variáveis vida e pontos e mostrar os valores no Console.',links:['https://exemplo.com/codigo-variaveis'],risks:[{p:'O Unity não abre no computador do aluno.',s:'Passar acesso remoto com o AnyDesk para o aluno conseguir usar o Unity.'}]},
+{min:20,title:'Condicionais: se e senão',desc:'Explicar o if e o else com o exemplo da porta que só abre se tiver a chave. Escrever a condição vida menor ou igual a zero.',links:['https://exemplo.com/codigo-condicionais'],risks:[{p:'Os alunos trocam = por == na condição.',s:'Mostrar a diferença no quadro e conferir o código pelo link.'}]},
+{min:20,title:'Prática no jogo',desc:'Os alunos fazem o personagem perder vida ao tocar no obstáculo e mostrar Fim de jogo quando a vida chegar a zero.',links:[],risks:[]},
+{min:10,title:'Desafio extra e fechamento',desc:'Desafio para quem terminar: criar uma segunda condição, como ganhar bônus ao passar de 100 pontos. Fechar revisando o que foi aprendido.',links:[],risks:[]}],
+succ:['O aluno instalou o Unity e abriu o projeto.','O aluno criou as variáveis vida e pontos.','O aluno usou uma condição (if) para mostrar Fim de jogo.']};
+let exUrl=null,exBlob=null,gScroll=0;
+function planHtml(D){
+  const f=D.f,dur=+D.dur||90,E=esc;
+  const info=[['Turma','#'+f.id],['Módulo'+(f.mes?' (início '+f.mes+')':''),f.mod],['Professor',f.prof],['Dia e horário',f.dia+' - '+f.hora],['Data da aula',f.data?f.data.split('-').reverse().join('/'):'Não informada'],['Duração',dur+' min']];
+  const it=Q.filter(o=>D.q[o.k].v===true&&D.q[o.k].done);let t=0;
+  const blocks=D.blocks.map(b=>{const m=+b.min||0,tag=t+'-'+(t+m)+' min';t+=m;const lk=b.links.map(l=>l.trim()).filter(Boolean),rs=b.risks.filter(r=>r.p.trim());
+    return `<div class='pp-blk'><div class='pp-bh'><span class='pp-pill'>${tag}</span><b>${E(b.title||'Sem título')}</b></div><p>${E(b.desc)}</p>${lk.map(l=>`<p class='pp-lk'>Link: ${E(l)}</p>`).join('')}${rs.length?`<div class='pp-rk'><b>O que pode dar errado</b>${rs.map(r=>`<p><b>Problema:</b> ${E(r.p)}${r.s.trim()?`<br>Solução: ${E(r.s)}`:''}</p>`).join('')}</div>`:''}</div>`}).join('');
+  return `<div class='pp'><div class='pp-top'></div><div class='pp-hero'><h4>Plano de preparo de aula</h4><p>Programação e Robótica</p></div><div class='pp-body'>
+<div class='pp-info'>${info.map(c=>`<div><small>${E(c[0])}</small><b>${E(c[1])}</b></div>`).join('')}</div>
+<h5 class='pp-h'>Plano pré-aula</h5>${it.length?it.map(o=>`<div class='pp-chk'><i>✓</i><span>${E(o.a)}</span></div>`).join(''):'<p>Nenhuma preparação específica necessária.</p>'}
+<h5 class='pp-h'>Roteiro da aula</h5>${blocks}
+${D.drive.trim()?`<h5 class='pp-h'>Materiais da aula</h5><p class='pp-lk'>${E(D.drive.trim())}</p>`:''}
+<h5 class='pp-h'>Aula de sucesso</h5>${D.succ.filter(x=>x.trim()).map(x=>`<div class='pp-chk g'><i>✓</i><span>${E(x)}</span></div>`).join('')}
+</div></div>`;
+}
+function showEx(){
+  gScroll=$('#gview').scrollTop;$('#gview').hidden=true;$('#xview').hidden=false;$('#gt').textContent='Exemplo de plano de aula';
+  if(!$('#xpaper').innerHTML)$('#xpaper').innerHTML=planHtml(EX);
+  $('#xscroll').scrollTop=0;
+}
+function showGuide(){
+  $('#xview').hidden=true;$('#gview').hidden=false;$('#gt').textContent='Guia de preparo de aula';$('#gview').scrollTop=gScroll;
+}
+function exPdf(){
+  const J=window.jspdf&&window.jspdf.jsPDF,m=$('#exmsg');
+  if(!J){m.hidden=false;m.textContent='Não foi possível carregar o gerador de PDF. Recarregue a página.';return null}
+  m.hidden=true;
+  if(!exBlob){const r=buildDoc(EX,J);exBlob=r.doc.output('blob');exUrl=URL.createObjectURL(exBlob)}
+  return exBlob;
+}
+async function exDownload(){
+  const bl=exPdf();if(!bl)return;let dl=null;try{dl=window.claude?await window.claude.use('downloads'):null}catch(e){}
+  const name='Exemplo - plano de aula.pdf';
+  if(dl){try{await dl.save({filename:name,data:await bl.arrayBuffer()})}catch(e){}return}
+  const a=document.createElement('a');a.href=exUrl;a.download=name;document.body.appendChild(a);a.click();a.remove();
+}
+function buildDoc(S,J){
+  const f=S.f,dur=+S.dur||90,doc=new J({unit:'mm',format:'a4'});
+  const NAVY=[45,44,112],RED=[232,23,63],INK=[58,59,77],SOFT=[107,109,128],LINE=[223,226,234],BG=[247,248,251],TINT=[238,238,250],AMB=[254,241,196],AMBT=[138,90,0],GRN=[29,122,69];
+  const M=16,TW=178,BOT=280,LH=0.46;let y=0;
+  const fill=c=>doc.setFillColor(c[0],c[1],c[2]),ink=c=>doc.setTextColor(c[0],c[1],c[2]),stroke=c=>doc.setDrawColor(c[0],c[1],c[2]);
+  const wrap=(t,sz,b,w)=>{doc.setFont('helvetica',b?'bold':'normal');doc.setFontSize(sz);return doc.splitTextToSize(String(t),w)};
+  const put=(ls,x,sz,b,c,link)=>{doc.setFont('helvetica',b?'bold':'normal');doc.setFontSize(sz);ink(c);ls.forEach(l=>{doc.text(l,x,y+sz*0.3);if(link)doc.link(x,y,TW,sz*LH,{url:link});y+=sz*LH})};
+  const tick=(cx,cy,k)=>{stroke([255,255,255]);doc.setLineWidth(0.5);doc.line(cx-k,cy,cx-k*0.3,cy+k*0.7);doc.line(cx-k*0.3,cy+k*0.7,cx+k,cy-k*0.8)};
+  const page=()=>{doc.addPage();fill(RED);doc.rect(0,0,210,1.5,'F');y=16};
+  const need=h=>{if(y+h>BOT)page()};
+  const head=t=>{need(14);y+=3;fill(RED);doc.roundedRect(M,y,1.8,6.5,0.9,0.9,'F');put([t],M+5,13,true,NAVY);y+=2.5};
+  // faixa inicial
+  fill(RED);doc.rect(0,0,210,3,'F');fill(NAVY);doc.rect(0,3,210,38,'F');
+  try{doc.setGState(new doc.GState({opacity:0.07}));stroke([255,255,255]);doc.setLineWidth(7);doc.circle(196,8,20,'S');doc.setGState(new doc.GState({opacity:1}))}catch(e){}
+  y=15;put(['Plano de preparo de aula'],M,20,true,[255,255,255]);y=27;put(['Programação e Robótica'],M,11,false,[222,222,240]);
+  // quadro da turma
+  y=48;fill(BG);stroke(LINE);doc.setLineWidth(0.3);doc.roundedRect(M,y,TW,30,3,3,'FD');
+  const info=[['Turma','#'+f.id],['Módulo'+(f.mes?' (início '+f.mes+')':''),f.mod],['Professor',f.prof],['Dia e horário',f.dia+' - '+f.hora],['Data da aula',f.data?f.data.split('-').reverse().join('/'):'Não informada'],['Duração',dur+' min']];
+  info.forEach((c,i)=>{const x=M+6+(i%3)*58,yy=y+6+Math.floor(i/3)*13;doc.setFont('helvetica','normal');doc.setFontSize(8);ink(SOFT);doc.text(c[0],x,yy+2);doc.setFont('helvetica','bold');doc.setFontSize(10.5);ink(NAVY);doc.text(doc.splitTextToSize(String(c[1]),54)[0],x,yy+7.5)});
+  y+=34;
+  // pré-aula
+  head('Plano pré-aula');
+  const it=Q.filter(o=>S.q[o.k].v===true&&S.q[o.k].done);
+  if(it.length)it.forEach(o=>{const ls=wrap(o.a,10,false,TW-10);need(ls.length*10*LH+3);fill(RED);doc.roundedRect(M+1,y+0.4,4.6,4.6,1,1,'F');tick(M+3.3,y+2.3,1.1);const y0=y;put(ls,M+9,10,false,INK);y=Math.max(y,y0+6)+1});
+  else put(['Nenhuma preparação específica necessária.'],M,10,false,SOFT);
+  // roteiro
+  head('Roteiro da aula');
+  let t=0;
+  S.blocks.forEach(b=>{
+    const m=+b.min||0,tag=t+'-'+(t+m)+' min';t+=m;
+    doc.setFont('helvetica','bold');doc.setFontSize(9);const pw=doc.getTextWidth(tag)+8,IW=TW-10;
+    const tl=wrap(b.title||'Sem título',11,true,IW-pw-4),dl2=wrap(b.desc,9.5,false,IW),lks=b.links.map(l=>l.trim()).filter(Boolean).map(l=>({ls:wrap('Link: '+l,9,false,IW),url:/^https?:/i.test(l)?l:null})),rs=b.risks.filter(r=>r.p.trim());
+    const rl=rs.map(r=>({p:wrap('Problema: '+r.p,9,true,IW-8),s:r.s.trim()?wrap('Solução: '+r.s,9,false,IW-8):[]}));
+    const hh=Math.max(6.5,tl.length*11*LH);
+    let H=5+hh+2+dl2.length*9.5*LH+(lks.length?1.5+lks.reduce((a,k)=>a+k.ls.length*9*LH+0.8,0):0)+5;
+    if(rl.length)H+=3+5+rl.reduce((a,r)=>a+(r.p.length+r.s.length)*9*LH+2,0)+1;
+    need(Math.min(H,60));
+    const y0=y;fill([255,255,255]);stroke(LINE);doc.setLineWidth(0.3);doc.roundedRect(M,y0,TW,H,2.5,2.5,'FD');fill(RED);doc.roundedRect(M,y0+3,1.6,H-6,0.8,0.8,'F');
+    fill(TINT);doc.roundedRect(M+5,y0+5,pw,6.5,3.25,3.25,'F');doc.setFont('helvetica','bold');doc.setFontSize(9);ink(NAVY);doc.text(tag,M+9,y0+9.4);
+    y=y0+5+(hh-tl.length*11*LH)/2;put(tl,M+5+pw+4,11,true,NAVY);y=y0+5+hh+2;
+    put(dl2,M+5,9.5,false,INK);
+    if(lks.length){y+=1.5;lks.forEach(k=>{put(k.ls,M+5,9,false,RED,k.url);y+=0.8})}
+    if(rl.length){y+=3;const bh=5+rl.reduce((a,r)=>a+(r.p.length+r.s.length)*9*LH+2,0)+1;fill(AMB);doc.roundedRect(M+5,y,IW,bh,2,2,'F');y+=2.5;put(['O que pode dar errado'],M+9,8.5,true,AMBT);y+=0.5;rl.forEach(r=>{put(r.p,M+9,9,true,INK);put(r.s,M+9,9,false,INK);y+=2})}
+    y=y0+H+4});
+  if(S.drive.trim()){head('Materiais da aula');const ls=wrap(S.drive.trim(),10,false,TW);need(ls.length*10*LH+2);put(ls,M,10,false,RED,/^https?:/i.test(S.drive.trim())?S.drive.trim():null);y+=2}
+  head('Aula de sucesso');
+  S.succ.filter(s=>s.trim()).forEach(s=>{const ls=wrap(s,10,false,TW-9);need(ls.length*10*LH+3);fill(GRN);doc.circle(M+3,y+2.6,2.5,'F');tick(M+3,y+2.6,1.1);const y0=y;put(ls,M+9,10,false,INK);y=Math.max(y,y0+6)+1});
+  // rodapé
+  const n=doc.getNumberOfPages();
+  for(let i=1;i<=n;i++){doc.setPage(i);stroke(LINE);doc.setLineWidth(0.3);doc.line(M,288,M+TW,288);doc.setFont('helvetica','normal');doc.setFontSize(8);ink(SOFT);doc.text('Programação e Robótica - Plano de aula',M,292.5);doc.text('Página '+i+' de '+n,M+TW,292.5,{align:'right'})}
+    const fn=['#'+f.id,f.prof,f.data?f.data.split('-').reverse().join('-'):''].filter(x=>x&&x!=='#').join(' - ').replace(/[\\\/:*?"<>|]/g,'')+'.pdf';
+    doc.setProperties({title:fn.replace(/\.pdf$/,''),subject:'Plano de preparo de aula',creator:'Preparo de aula',keywords:'PREPARO-DE-AULA:v1:'+btoa(unescape(encodeURIComponent(JSON.stringify({v:1,S}))))});
+  return {doc,fn};
+}
+async function savePdf(){
+  if($('#savebtn').disabled)return;
+  const J=window.jspdf&&window.jspdf.jsPDF;
+  if(!J){flash('Não foi possível carregar o gerador de PDF. Recarregue a página.',1);return}
+  let dl=null;try{dl=window.claude?await window.claude.use('downloads'):null}catch(e){}
+  
+  const {doc,fn}=buildDoc(S,J);
+  try{
+    if(dl)await dl.save({filename:fn,data:doc.output('arraybuffer')});else doc.save(fn);
+    flash('PDF salvo.');
+  }catch(e){flash(e&&e.code==='declined'?'Download cancelado.':'Não foi possível salvar o PDF.',1)}
+}
+document.addEventListener('change',e=>{const a=e.target.dataset.act;if(a&&a.startsWith('done:')){S.q[a.split(':')[1]].done=e.target.checked;upd()}});
+render();
+</script>
+</body>
+</html>
